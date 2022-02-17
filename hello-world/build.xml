@@ -31,7 +31,7 @@
 	<!--
 	TODO: Make this target depend on the 'clean' and 'resolve' targets.
 	-->
-	<target name="compile">
+	<target name="compile" depends="clean,resolve">
 	  <mkdir dir="${classes.dir}"/>
 	  <javac srcdir="${src.dir}" destdir="${classes.dir}">
 	    <!--
@@ -44,7 +44,7 @@
 	<!--
 	TODO: Make this target depend on the 'compile' target.
 	-->
-	<target name="test-compile">
+	<target name="test-compile" depends="compile">
 	  <mkdir dir="${classes.test.dir}"/>
 	  <javac srcdir="${src.test.dir}" destdir="${classes.test.dir}">
 	    <!--
@@ -75,7 +75,7 @@
 	<!--
 	TODO: Make this target depend on the 'test' target.
 	-->
-	<target name="jar">
+	<target name="jar" depends="test">
           <ivy:cachefileset setid="hello.runclasspath" conf="compile" />
           <jar destfile="${jar.file}" basedir="${classes.dir}">
             <manifest>
