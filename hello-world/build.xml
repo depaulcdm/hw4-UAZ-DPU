@@ -44,7 +44,7 @@
 		-->
 	    <classpath>
 		  <fileset refid="compile.classpath"/>
-		  <pathelment path="${classes.dir}" />
+		  <pathelement path="${classes.dir}" />
 		</classpath>
 	  </javac>
 	</target>
@@ -62,8 +62,8 @@
 		-->
 		<classpath>
 		  <fileset refid="test.classpath"/>
-		  <pathelment path="${classes.dir}" />
-		  <pathelment path="${classes.test.dir}" />
+		  <pathelement path="${classes.dir}" />
+		  <pathelement path="${classes.test.dir}" />
 		</classpath>
 	  </javac>
 	</target>
@@ -78,8 +78,8 @@
             -->
 			<classpath>
 			  <fileset refid="test.classpath"/>
-			  <pathelment path="${classes.dir}" />
-			  <pathelment path="${classes.test.dir}" />
+			  <pathelement path="${classes.dir}" />
+			  <pathelement path="${classes.test.dir}" />
 			</classpath>
             <formatter type="plain" />        
             <batchtest fork="yes" todir="${reports.dir}">
